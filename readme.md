@@ -7,7 +7,8 @@ Prerequisites:
 In theory, AutoUpdater should run on the desired platform if the other platform is not supplied, but I haven't tested it yet to be certain. To use it, place `AutoUpdater` in the parent directory of the directory your application lives in, and call it from the directory your application lives in. Use the `-o` param to specify the owner of the repo to access, `-r` param to specify the repo to access, and the optional `-a` param to specify what file to launch within the downloaded assets after decompression.
 
 Sample directory setup:
-![[Pasted image 20260907101414.png]]
+<img width="911" height="195" alt="image" src="https://github.com/user-attachments/assets/37b1676e-57b9-4510-bdbf-d4dfc145b693" />
+
 
 Automatic updates *might* work if you run AutoUpdater while the app you're trying to update is still running, but it's very likely it will not and may cause file corruption. It's advised to call AutoUpdater from your code, making sure to launch it as a detached process, and immediately close your application. Example code:
 
