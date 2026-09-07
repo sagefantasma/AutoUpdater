@@ -22,6 +22,15 @@ try
     repo = args[args.IndexOf("-r") + 1];
     owner = args[args.IndexOf("-o") + 1];
     autoStartFile = args[args.IndexOf("-a") + 1];
+    if (autoStartFile.StartsWith("'"))
+    {
+        for (int i = args.IndexOf("-a")+2; i <= args.IndexOf(args.First(x => x.EndsWith("'"))); i++)
+        {
+            autoStartFile += $" {args[i]}";
+        }
+
+        autoStartFile = autoStartFile.Replace("'", "");
+    }
     if (repo == "-o" || owner == "-r")
     {
         throw new Exception($"You must supply repo owner after -o, and repo name after -r. {exampleUse}");
